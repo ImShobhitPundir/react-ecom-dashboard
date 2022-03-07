@@ -1,23 +1,32 @@
 import logo from './logo.svg';
 import './App.css';
+import Button from 'react-bootstrap/Button';
+import { BrowserRouter,Routes,Route } from "react-router-dom";
+
+import Home from './Home';
+import Add from './Add';
+import List from './List';
+import Login from './Login';
+import Register from './Register';
+import Logout from './Logout';
+import Protected from './Protected';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+       
+        <Routes>
+         <Route path="/" element={<Protected Cmp={Home} />} />
+          <Route path="add" element={<Protected Cmp={Add} />} />
+          <Route path="list" element={<Protected Cmp={List} />} />
+          <Route path="logout" element={<Protected Cmp={Logout} />} />
+          <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
+        </Routes>
+      </BrowserRouter>
+     
     </div>
   );
 }

@@ -30,6 +30,7 @@ export default function Header() {
                                         <Link to="/">Home</Link>
                                         <Link to="/add">Add Product</Link>
                                         <Link to="/list">Veiw Product</Link>
+                                        <Link to="/search">Search Product</Link>
                                     </>
                                     :
                                     <>
